@@ -47,6 +47,52 @@ namespace Ef_Core_Assignment_3.Migrations
                     b.HasIndex("ParentCategoryId");
 
                     b.ToTable("Categories", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "All programming topics",
+                            Name = "Programming"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Design topics",
+                            Name = "Design"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Data Science"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Server-side development",
+                            Name = "Backend",
+                            ParentCategoryId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Client-side development",
+                            Name = "Frontend",
+                            ParentCategoryId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "UI/UX",
+                            ParentCategoryId = 4
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "ASP.NET Core",
+                            Name = "ASP.NET",
+                            ParentCategoryId = 6
+                        });
                 });
 
             modelBuilder.Entity("Ef_Core_Assignment_3.Models.Course", b =>
@@ -94,6 +140,76 @@ namespace Ef_Core_Assignment_3.Migrations
                     b.HasIndex("InstructorId");
 
                     b.ToTable("Courses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 3,
+                            Description = "Build REST APIs.",
+                            InstructorId = 1,
+                            IsPublished = true,
+                            Level = "Intermediate",
+                            Price = 1200m,
+                            PublishedDate = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "ASP.NET Core Web API"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 1,
+                            Description = "Start with C#.",
+                            InstructorId = 1,
+                            IsPublished = true,
+                            Level = "Beginner",
+                            Price = 600m,
+                            PublishedDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "C# Fundamentals"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 2,
+                            Description = "Deep dive into EF Core.",
+                            InstructorId = 2,
+                            IsPublished = true,
+                            Level = "Advanced",
+                            Price = 1500m,
+                            PublishedDate = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Advanced Entity Framework Core"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 4,
+                            InstructorId = 2,
+                            IsPublished = true,
+                            Level = "Beginner",
+                            Price = 800m,
+                            PublishedDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "React for Beginners"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 6,
+                            Description = "Design fundamentals.",
+                            InstructorId = 3,
+                            IsPublished = false,
+                            Level = "Beginner",
+                            Price = 700m,
+                            Title = "UI/UX Design Basics"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 2,
+                            InstructorId = 3,
+                            IsPublished = false,
+                            Level = "Advanced",
+                            Price = 2000m,
+                            Title = "Microservices Architecture"
+                        });
                 });
 
             modelBuilder.Entity("Ef_Core_Assignment_3.Models.Enrollment", b =>
@@ -157,6 +273,31 @@ namespace Ef_Core_Assignment_3.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Instructors", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Bio = "Senior .NET developer and trainer.",
+                            Email = "ahmed.samir@learn.com",
+                            FullName = "Ahmed Samir",
+                            JoinDate = new DateTime(2022, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Bio = "Full-stack engineer.",
+                            Email = "sara.mahmoud@learn.com",
+                            FullName = "Sara Mahmoud",
+                            JoinDate = new DateTime(2022, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "khaled.nabil@learn.com",
+                            FullName = "Khaled Nabil",
+                            JoinDate = new DateTime(2023, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Ef_Core_Assignment_3.Models.Student", b =>

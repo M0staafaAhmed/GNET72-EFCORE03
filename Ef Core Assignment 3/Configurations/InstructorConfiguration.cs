@@ -28,6 +28,12 @@ namespace Ef_Core_Assignment_3.Configurations
 
             builder.Property(i => i.JoinDate)
                 .IsRequired();
+
+            builder.HasData(
+                new Instructor { Id = 1, FullName = "Ahmed Samir", Email = "ahmed.samir@learn.com", Bio = "Senior .NET developer and trainer.", JoinDate = new DateTime(2022, 1, 10) },
+                new Instructor { Id = 2, FullName = "Sara Mahmoud", Email = "sara.mahmoud@learn.com", Bio = "Full-stack engineer.", JoinDate = new DateTime(2022, 6, 1) },
+                new Instructor { Id = 3, FullName = "Khaled Nabil", Email = "khaled.nabil@learn.com", Bio = null, JoinDate = new DateTime(2023, 3, 15) }
+            );
         }
     }
 }

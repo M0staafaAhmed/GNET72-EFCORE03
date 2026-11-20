@@ -27,6 +27,16 @@ namespace Ef_Core_Assignment_3.Configurations
                 .HasForeignKey(c => c.ParentCategoryId)
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasData(
+                new Category { Id = 1, Name = "Programming", Description = "All programming topics", ParentCategoryId = null },
+                new Category { Id = 2, Name = "Design", Description = "Design topics", ParentCategoryId = null },
+                new Category { Id = 3, Name = "Data Science", Description = null, ParentCategoryId = null },
+                new Category { Id = 4, Name = "Backend", Description = "Server-side development", ParentCategoryId = 1 },
+                new Category { Id = 5, Name = "Frontend", Description = "Client-side development", ParentCategoryId = 1 },
+                new Category { Id = 6, Name = "UI/UX", Description = null, ParentCategoryId = 4 },
+                new Category { Id = 7, Name = "ASP.NET", Description = "ASP.NET Core", ParentCategoryId = 6 }
+            );
         }
     }
 }

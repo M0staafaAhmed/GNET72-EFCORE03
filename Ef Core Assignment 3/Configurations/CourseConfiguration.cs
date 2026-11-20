@@ -49,6 +49,15 @@ namespace Ef_Core_Assignment_3.Configurations
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Restrict);
 
+            builder.HasData(
+                new Course { Id = 1, Title = "ASP.NET Core Web API", Description = "Build REST APIs.", Price = 1200m, Level = CourseLevel.Intermediate, IsPublished = true, PublishedDate = new DateTime(2024, 1, 5), InstructorId = 1, CategoryId = 3 },
+                new Course { Id = 2, Title = "C# Fundamentals", Description = "Start with C#.", Price = 600m, Level = CourseLevel.Beginner, IsPublished = true, PublishedDate = new DateTime(2023, 11, 20), InstructorId = 1, CategoryId = 1 },
+                new Course { Id = 3, Title = "Advanced Entity Framework Core", Description = "Deep dive into EF Core.", Price = 1500m, Level = CourseLevel.Advanced, IsPublished = true, PublishedDate = new DateTime(2024, 2, 12), InstructorId = 2, CategoryId = 2 },
+                new Course { Id = 4, Title = "React for Beginners", Description = null, Price = 800m, Level = CourseLevel.Beginner, IsPublished = true, PublishedDate = new DateTime(2024, 3, 1), InstructorId = 2, CategoryId = 4 },
+                new Course { Id = 5, Title = "UI/UX Design Basics", Description = "Design fundamentals.", Price = 700m, Level = CourseLevel.Beginner, IsPublished = false, PublishedDate = null, InstructorId = 3, CategoryId = 6 },
+                new Course { Id = 6, Title = "Microservices Architecture", Description = null, Price = 2000m, Level = CourseLevel.Advanced, IsPublished = false, PublishedDate = null, InstructorId = 3, CategoryId = 2 }
+            );
+
 
         }
     }
