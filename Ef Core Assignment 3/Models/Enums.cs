@@ -6,14 +6,14 @@ namespace Ef_Core_Assignment_3.Models
 {
     internal enum CourseLevel
     {
-        Beginner,
+        Beginner = 1,
         Intermediate,
         Advanced
     }
 
     internal enum EnrollmentStatus
     {
-        Active,
+        Active = 1,
         Completed,
         Dropped
     }
